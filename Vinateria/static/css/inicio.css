@@ -1,0 +1,12 @@
+main>.container {
+    padding: 30px 0;
+}
+
+#contenido {
+    margin-top: 80px;
+}
+
+.navbar-brand .logo {
+    max-width: 100px; 
+    height: auto; 
+}

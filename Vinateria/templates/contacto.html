@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vinateria</title>
+	<link href="/static/css/inicio.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="/static/sweetalert.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+<!--Barra de navegación-->
+    <header>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+					<img src="/static/img/logo.png" alt="Logo de la Tienda Online" class="logo"> 
+                    <strong>Tienda Online</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarHeader">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Catalogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contacto</a>
+                        </li>
+                         <!-- Dropdown -->
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administrador
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="catalogo">Inicio</a>
+								<a class="dropdown-item" href="prod_vol">Agregar Producto</a>
+                                <a class="dropdown-item" href="productos">Productos</a>
+                                <a class="dropdown-item" href="escritorio">Proveedores</a>
+                                <a class="dropdown-item" href="marca">Marca</a>
+                                <a class="dropdown-item" href="tipo">Tipo</a>
+                                <a class="dropdown-item" href="volumen">Volumen</a>
+                                <a class="dropdown-item" href="informe">Reportes</a>
+                            </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #formulario-contacto form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        #formulario-contacto label,
+        #formulario-contacto textarea,
+        #formulario-contacto input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #formulario-contacto textarea {
+            resize: vertical;
+        }
+
+        #formulario-contacto button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #formulario-contacto button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>VINAMAN</h1>
+    <p>Tu tienda de vinos y licores favorita</p>
+</header>
+
+<section id="contacto">
+    <h2>Información de Contacto</h2>
+    <p>¡Estamos aquí para ayudarte! Contáctanos para obtener más información.</p>
+
+    <ul>
+        <li><strong>Dirección:</strong> Calle Lomas turbas #11, Arandas Jalisco</li>
+        <li><strong>Teléfono:</strong> (+52) 348-109-7178</li>
+        <li><strong>Correo Electrónico:</strong> vinaman@gmail.com</li>
+    </ul>
+
+    <p>Horario de Atención:</p>
+    <p>Lunes a Viernes: 9:00 AM - 8:00 PM</p>
+    <p>Sábado: 10:00 AM - 6:00 PM</p>
+</section>
+
+<section id="formulario-contacto">
+    <h2>Formulario de Contacto</h2>
+    <form action="/enviar-mensaje" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2023 ViNAMAN XYZ. Todos los derechos reservados.</p>
+</footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="{{url_for('static', filename='sweetalert.min.js')}}"></script>
+
+	<!-- Option 1: funcionalidad Bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
